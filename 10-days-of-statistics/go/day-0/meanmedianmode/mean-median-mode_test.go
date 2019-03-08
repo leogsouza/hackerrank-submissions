@@ -33,3 +33,18 @@ func TestMedian(t *testing.T) {
 		}
 	}
 }
+
+func TestMode(t *testing.T) {
+	data := []struct {
+		numbers  []int
+		expected int
+	}{
+		{[]int{64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060}, 4978},
+	}
+
+	for _, tt := range data {
+		if got := Mode(tt.numbers); got != tt.expected {
+			t.Errorf("Mode expected %d but got %d", tt.expected, got)
+		}
+	}
+}
