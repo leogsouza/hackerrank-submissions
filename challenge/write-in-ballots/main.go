@@ -1,16 +1,5 @@
 package main
 
-import (
-    "bufio"
-    "fmt"
-    "io"
-    "os"
-    "strconv"
-    "strings"
-)
-
-
-
 /*
  * Complete the 'writeIn' function below.
  *
@@ -19,26 +8,24 @@ import (
  */
 
 func writeIn(ballot []string) string {
-    candidates := make(map[string]int)
-    var winner string
-    var total int
+	candidates := make(map[string]int)
+	var winner string
+	var total int
 
-    for _, candidate := range ballot {
-        candidates[candidate]++
-    }
+	for _, candidate := range ballot {
+		candidates[candidate]++
+	}
 
-    for name, votes := range candidates {
-        if votes > total {
-            total = votes
-            winner = name
-        } else if votes == total {
-            if name > winner {
-                winner = name
-            }
-        }
-    }
+	for name, votes := range candidates {
+		if votes > total {
+			total = votes
+			winner = name
+		} else if votes == total {
+			if name > winner {
+				winner = name
+			}
+		}
+	}
 
-    return winner
+	return winner
 }
-
-func main() {
