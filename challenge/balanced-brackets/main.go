@@ -34,6 +34,9 @@ func isBalanced(s string) string {
 			stack = stack[:len(stack)-1]
 		}
 	}
+	if len(stack) > 0 {
+		return "NO"
+	}
 
 	return "YES"
 }
